@@ -102,6 +102,7 @@ class AFEW(data.Dataset):
             print("Warning: No videos found! Check the dataset structure and path.")
        
         dataset = []
+        class_descr = yaml.safe_load(Path('DataLoaders/class_descriptions.yml').read_text())
         for idx, row in enumerate(videos):
             row = row.split('/')
             video_idx = row[-1]  # Extract the video name
